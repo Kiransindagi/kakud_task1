@@ -42,7 +42,7 @@ export default function TextSection() {
                         <p className="mb-4 font-bold text-gray-900 text-xl">The Challenge.</p>
                         <p>
                             Students struggle to find research opportunities. Researchers lack access to labs and collaborators.
-                            Companies can't connect with emerging talent and innovation. Scientific knowledge remains scattered
+                            Companies can&apos;t connect with emerging talent and innovation. Scientific knowledge remains scattered
                             across disconnected platforms.
                         </p>
                     </div>

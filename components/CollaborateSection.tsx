@@ -28,7 +28,7 @@ export default function CollaborateSection() {
                         To Each Community
                     </h2>
                     <p className="text-sm text-gray-600 max-w-2xl">
-                        Whether you're a student seeking opportunities, a researcher looking for resources,
+                        Whether you&apos;re a student seeking opportunities, a researcher looking for resources,
                         or an organization searching for talent—NBRO connects you to what you need.
                     </p>
                 </div>

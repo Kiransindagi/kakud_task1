@@ -29,8 +29,8 @@ export default function Features() {
                             Scientific Discovery
                         </h2>
                         <p className="text-sm text-gray-600 leading-relaxed">
-                            NBRO is more than a platform—it's a movement to democratize research access.
-                            We're breaking down barriers between students, researchers, labs, and industry to create
+                            NBRO is more than a platform—it&apos;s a movement to democratize research access.
+                            We&apos;re breaking down barriers between students, researchers, labs, and industry to create
                             a thriving ecosystem where knowledge flows freely, collaboration happens naturally,
                             and innovation accelerates. Join thousands who are already shaping the future of science.
                         </p>
