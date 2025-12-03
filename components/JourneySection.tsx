@@ -51,7 +51,14 @@ export default function JourneySection() {
             >
                 {/* Overlay and Button */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center">
-                    <button className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                    <button
+                        className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 hover:bg-gray-100 active:scale-95"
+                        onMouseDown={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            alert(`Clicked Get Started for ${title}`);
+                        }}
+                    >
                         Get Started
                     </button>
                 </div>
