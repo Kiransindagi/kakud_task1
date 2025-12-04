@@ -28,31 +28,17 @@ export default function JourneySection() {
         if (!isDragging || !scrollRef.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2; // Scroll speed multiplier
+        const walk = (x - startX) * 1.5; //scroll-fast
         scrollRef.current.scrollLeft = scrollLeft - walk;
     };
 
     const CardContent = ({ image, number, title }: { image: string, number?: string, title: string }) => (
-        <div className="relative rounded-3xl overflow-hidden aspect-[4/5] mb-6 group cursor-pointer bg-white">
-            {/* Hidden Header (Revealed on Hover) */}
-            <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-start z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                <h2 className="text-3xl font-bold text-gray-900 leading-tight">
-                    {title}
-                </h2>
-                <button className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors shadow-lg">
-                    <Plus className="w-5 h-5" />
-                </button>
-            </div>
-
-            {/* Image Layer */}
-            <div
-                className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out z-10 group-hover:translate-y-[140px] group-hover:rounded-t-3xl"
-                style={{ backgroundImage: `url('${image}')` }}
-            >
-                {/* Overlay and Button */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 flex items-center justify-center">
+        <div className="mb-6 group cursor-pointer">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-white transition-all duration-500">
+                {/* Background Layer with Button */}
+                <div className="absolute top-0 left-0 right-0 h-[140px] flex items-center justify-center z-0">
                     <button
-                        className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 hover:bg-gray-100 active:scale-95"
+                        className="bg-black text-white px-6 py-2 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 hover:bg-gray-800"
                         onMouseDown={(e) => e.stopPropagation()}
                         onClick={(e) => {
                             e.stopPropagation();
@@ -62,15 +48,17 @@ export default function JourneySection() {
                         Get Started
                     </button>
                 </div>
-            </div>
 
-            {/* Bottom Label (Visible initially, maybe hide on hover?) 
-                The design shows the label below the card in the original code. 
-                I will keep the label below the card as per original design for consistency, 
-                unless the user wants it inside. 
-                The user's prompt focused on the "Get Started" button coming to top.
-                I'll keep the external label for now as it was outside the card div in the original code.
-             */}
+                {/* Image Layer */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out z-10 group-hover:translate-y-[140px] group-hover:rounded-t-3xl"
+                    style={{ backgroundImage: `url('${image}')` }}
+                >
+                </div>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mt-4 text-left group-hover:text-gray-700 transition-colors">
+                {title}
+            </h3>
         </div>
     );
 
@@ -103,7 +91,7 @@ export default function JourneySection() {
                     </div>
 
                     {/* Column 3 */}
-                    <div className="flex flex-col min-w-[300px] md:min-w-[340px] pt-0 lg:pt-[120px] select-none">
+                    <div className="flex flex-col min-w-[300px] md:min-w-[340px] select-none">
                         <CardContent image="/technology-irrigation.png" title="Technology Irrigation" />
                         <div className="flex justify-between items-center">
 
@@ -111,7 +99,7 @@ export default function JourneySection() {
                     </div>
 
                     {/* Column 4 */}
-                    <div className="flex flex-col min-w-[300px] md:min-w-[340px] pt-0 lg:pt-[120px] select-none">
+                    <div className="flex flex-col min-w-[300px] md:min-w-[340px] select-none">
                         <CardContent image="/industry-innovation.png" title="Industry Innovation" />
                         <div className="flex justify-between items-center">
 
