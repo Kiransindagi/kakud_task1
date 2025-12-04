@@ -36,7 +36,7 @@ export default function JourneySection() {
         <div className="mb-6 group cursor-pointer">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-white transition-all duration-500">
                 {/* Background Layer with Button */}
-                <div className="absolute top-0 left-0 right-0 h-[140px] flex items-center justify-center z-0">
+                <div className="absolute top-0 left-0 right-0 h-[100px] flex items-center justify-center z-0">
                     <button
                         className="bg-black text-white px-6 py-2 rounded-full font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 hover:bg-gray-800"
                         onMouseDown={(e) => e.stopPropagation()}
@@ -51,12 +51,12 @@ export default function JourneySection() {
 
                 {/* Image Layer */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out z-10 group-hover:translate-y-[140px] group-hover:rounded-t-3xl"
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out z-10 group-hover:translate-y-[100px] group-hover:rounded-t-3xl"
                     style={{ backgroundImage: `url('${image}')` }}
                 >
                 </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mt-4 text-left group-hover:text-gray-700 transition-colors">
+            <h3 className="text-base font-bold text-gray-900 mt-4 text-left group-hover:text-gray-700 transition-colors">
                 {title}
             </h3>
         </div>
